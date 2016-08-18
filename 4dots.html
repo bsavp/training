@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	4 dots game
+</title>
+<style>
+
+.column{
+	font-size: 20px;
+	background: #ccccff;
+	width:40px;
+	margin-left: 30px;
+	margin-right: 25px;
+}
+h1{
+	color:red;
+}
+#container {
+  width: 600px;
+  height: 700px;
+  left: 10px;
+  position: absolute;
+  //background: #ccccff;
+  z-index: 0;
+}
+#animate {
+  position: absolute;
+}
+#circle{
+ fill: red;
+ z-index: 1;
+}
+#pic {
+	position: absolute;
+    left: 10px;
+    top: 113px;
+    z-index: 2;
+}
+#c0 {position: absolute;top: 600px;fill:#ccccff;}
+#c1 {position: absolute;top: 500px;fill:#ccccff;}
+#c2 {position: absolute;top: 400px;fill:#ccccff;}
+#c3 {position: absolute;top: 300px;fill:#ccccff;}
+#c4 {position: absolute;top: 200px;fill:#ccccff;}
+#c5 {position: absolute;top: 100px;fill:#ccccff;}
+#c6 {position: absolute;top:  0px;fill:#ccccff;}
+#c7 {position: absolute;top: 600px; left:100px;fill:#ccccff;}
+#c8 {position: absolute;top: 500px;left:100px;fill:#ccccff;}
+#c9 {position: absolute;top: 400px;left:100px;fill:#ccccff;}
+#c10 {position: absolute;top: 300px;left:100px;fill:#ccccff;}
+#c11 {position: absolute;top: 200px;left:100px;fill:#ccccff;}
+#c12 {position: absolute;top: 100px;left:100px;fill:#ccccff;}
+#c13 {position: absolute;top:  0px;left:100px;fill:#ccccff;}
+#c14 {position: absolute;top: 600px; left:200px;fill:#ccccff;}
+#c15 {position: absolute;top: 500px;left:200px;fill:#ccccff;}
+#c16 {position: absolute;top: 400px;left:200px;fill:#ccccff;}
+#c17 {position: absolute;top: 300px;left:200px;fill:#ccccff;}
+#c18 {position: absolute;top: 200px;left:200px;fill:#ccccff;}
+#c19 {position: absolute;top: 100px;left:200px;fill:#ccccff;}
+#c20 {position: absolute;top:  0px;left:200px;fill:#ccccff;}
+#c21 {position: absolute;top: 600px; left:300px;fill:#ccccff;}
+#c22 {position: absolute;top: 500px;left:300px;fill:#ccccff;}
+#c23 {position: absolute;top: 400px;left:300px;fill:#ccccff;}
+#c24 {position: absolute;top: 300px;left:300px;fill:#ccccff;}
+#c25 {position: absolute;top: 200px;left:300px;fill:#ccccff;}
+#c26 {position: absolute;top: 100px;left:300px;fill:#ccccff;}
+#c27 {position: absolute;top:  0px;left:300px;fill:#ccccff;}
+#c28 {position: absolute;top: 600px; left:400px;fill:#ccccff;}
+#c29 {position: absolute;top: 500px;left:400px;fill:#ccccff;}
+#c30 {position: absolute;top: 400px;left:400px;fill:#ccccff;}
+#c31 {position: absolute;top: 300px;left:400px;fill:#ccccff;}
+#c32 {position: absolute;top: 200px;left:400px;fill:#ccccff;}
+#c33 {position: absolute;top: 100px;left:400px;fill:#ccccff;}
+#c34 {position: absolute;top:  0px;left:400px;fill:#ccccff;}
+#c35 {position: absolute;top: 600px; left:500px;fill:#ccccff;}
+#c36 {position: absolute;top: 500px;left:500px;fill:#ccccff;}
+#c37 {position: absolute;top: 400px;left:500px;fill:#ccccff;}
+#c38 {position: absolute;top: 300px;left:500px;fill:#ccccff;}
+#c39 {position: absolute;top: 200px;left:500px;fill:#ccccff;}
+#c40 {position: absolute;top: 100px;left:500px;fill:#ccccff;}
+#c41 {position: absolute;top:  0px;left:500px;fill:#ccccff;}
+
+</style>
+</head>
+<body>
+
+<h1> 4 dots </h1>
+ <img id = "pic" src="grid.png" alt="Smiley face" > 
+   
+   
+<button class = "column"  onclick="myMove(0)">&#8659;</button>
+<button class = "column"   onclick="myMove(100)">&#8659; </button>
+<button class = "column"   onclick="myMove(200)">&#8659; </button>
+<button class = "column"  onclick="myMove(300)">&#8659; </button>
+<button class = "column"   onclick="myMove(400)">&#8659; </button>
+<button class = "column"   onclick="myMove(500)">&#8659; </button>
+
+<div id ="container">
+<svg id="c0" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+   <svg id="c1" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+  <svg id="c2" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+   <svg id="c3" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c4" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c5" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c6" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c7" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c8" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c9" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c10" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c11" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+  <svg id="c12" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+   <svg id="c13" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c14" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c15" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c16" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c17" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c18" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c19" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c20" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c21" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+  <svg id="c22" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+   <svg id="c23" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c24" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c25" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c26" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c27" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c28" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c29" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c30" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c31" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+  <svg id="c32" width="100" height="100"> <rect x="0" y="0" width="100" height="100" /></svg> 
+   <svg id="c33" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c34" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c35" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c36" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c37" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c38" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg> 
+   <svg id="c39" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c40" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+   <svg id="c41" width="100" height="100"> <rect x="0" y="0" width="100" height="100"  /></svg>
+
+
+
+<div id ="animate">
+ <svg height="100" width="100">
+  <ellipse id="circle" cx="50" cy="50" rx="50" ry="50" />
+</svg> 
+</div>
+</div>
+
+<script> 
+var moves = 0;
+var sloths = new Array (42);
+var globalcolor;
+var max=6;
+var info = [6,6,6,6,6,6];
+function changeColor(i){
+ if(i==0){
+	globalcolor = 2;
+	circle.style.fill = "red";
+ }
+ if(i==1){
+	globalcolor=1;
+	circle.style.fill = "blue";
+ }
+ if(i%2 !== 0){
+	circle.style.fill = "blue";
+	globalcolor = 1;
+  }else{
+	circle.style.fill = "red";
+	globalcolor = 2;
+  }
+}
+function FillPlaces(x){
+	x = x/100;
+	s = x;
+	var word; 
+	var y =0;
+	//alert("x="x);
+	if(x==0){
+		if(sloths[x]==1 || sloths[x]==2){
+			for(var j=0; j<=6 ; j++){
+				if(sloths[j]!==1 && sloths[j]!==2){
+					word = "c" + j ;
+					sloths[j] = globalcolor;
+					info[0]--;
+					break;
+				}
+
+			}
+		}else{
+			sloths[x] = globalcolor;
+			info[0]--;
+			word = "c" + x;
+		}
+	}else{
+		x = x*7;
+		if(sloths[x]==1 || sloths[x]==2){
+		y = 0;
+			for(var x=x; x<=x+6 ; x++){
+				
+				if(sloths[x]!==1 && sloths[x]!==2){
+				x = x + y;
+				word = "c" + x;
+				sloths[x] = globalcolor;
+				info[s]--;
+				y++;
+				break;
+				}
+
+			}
+		}else{
+			sloths[x] = globalcolor;
+			word = "c" + x;
+			info[s]--;
+		}
+	
+	
+	
+	}
+	//alert(word);
+	 var filled = document.getElementById( word );
+	
+	if(globalcolor == 1){
+		filled.style.fill = "blue";
+	}else{
+		filled.style.fill = "red";
+	}
+	
+}
+function checkWinner(){
+ //count the colors of each vertical column and check for winner if there are 4 or more of the same kind
+ for(v=0; v<=5; v++){
+ 
+ var blue=0;
+ var red = 0;	
+    
+	for(var a=v*7; a<=v*7+6; a++){
+		if( sloths[a]==1){
+			blue++;
+			
+			if(blue >= 4){
+			for(var z=v; z<=v+3; z++){
+				if(sloths[z]==1 && sloths[z+1] == 1 && sloths[z+2] == 1 && sloths[z+3] == 1){
+					 alert("BLUE WINS!");
+				}
+			}
+		}
+			
+			
+		}else if(sloths[a] == 2){
+			red ++;
+			if( red >= 4){
+			 for(var z=v; z<=v+3; z++){
+				if(sloths[z]==2 && sloths[z+1] == 2 && sloths[z+2] == 2 && sloths[z+3] == 2){
+					 alert("RED WINS!");
+				}
+			}
+		}
+		}
+		 
+	}
+	
+ }
+ 
+ 
+ 
+}
+
+function myMove( lefty ) {
+  moves++; 
+
+  changeColor(moves);
+  var elem = document.getElementById("animate");  
+  elem.style.left = lefty + 'px'; 
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  max = info[lefty/100]*100;
+  //alert(max);
+ 
+  function frame() {
+    if (pos > max) {
+		ClearInterval(id);
+    } else {
+      pos= pos+5; 
+      elem.style.top = pos + 'px'; 
+    }
+	 
+  }
+   
+   setTimeout(FillPlaces,800,lefty);
+    setTimeout(checkWinner(),800);
+}
+
+
+
+</script>
+   
+   
+   
+
+</body>
+</html>
